@@ -49,4 +49,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Audio";
+echo "OK Vedio";
