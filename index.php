@@ -33,7 +33,7 @@ $file = fopen($fileName, 'w');
 fwrite($file, $response->getRawBody()); 
     
 // Reply message
-$respMessage = 'Hello, your video ID is '. $fileName; 
+$respMessage = 'Hello, your video ID is '. $messageID; 
 break; 
 default: 
     
