@@ -43,7 +43,7 @@ break;
 } 
 $httpClient = new CurlHTTPClient($channel_token); 
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret)); 
-$textMessageBuilder = new TextMessageBuilder($respMessage); 
+$textMessageBuilder = new TextMessageBuilder('Hello'); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 } 
 } 
