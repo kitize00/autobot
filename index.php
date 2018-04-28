@@ -44,10 +44,10 @@ break;
 } 
 $httpClient = new CurlHTTPClient($channel_token); 
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret)); 
-$textMessageBuilder = new TextMessageBuilder('Hello'); 
+$textMessageBuilder = new TextMessageBuilder($respMessage);
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 } 
 } 
 } 
-echo "OK Video2";
+echo "OK Video3";
 
