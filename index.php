@@ -26,11 +26,12 @@ case 'video':
 $messageID = $event['message']['id']; 
     
 // Create video file on server. 
-$fileID = $event['message']['id']; 
-$response = $bot->getMessageContent($fileID); 
-$fileName = 'linebot.mp4'; 
-$file = fopen($fileName, 'w'); 
-fwrite($file, $response->getRawBody()); 
+    
+//$fileID = $event['message']['id']; 
+//$response = $bot->getMessageContent($fileID); 
+//$fileName = 'linebot.mp4'; 
+//$file = fopen($fileName, 'w'); 
+//fwrite($file, $response->getRawBody()); 
     
 // Reply message
 $respMessage = 'Hello, your video ID is '. $messageID; 
