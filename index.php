@@ -21,7 +21,7 @@ if ($event['type'] == 'message') {
 $replyToken = $event['replyToken']; 
 switch($event['message']['type']) { 
 case 'sticker': 
-$messageID = $event['message']['Id']; 
+$messageID = $event['message']['id']; 
     
 // Reply message 
 $respMessage = 'Hello, your Sticker Package ID is '. $messageID; 
