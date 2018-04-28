@@ -49,5 +49,5 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Video";
+echo "OK Video2";
 
