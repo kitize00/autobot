@@ -39,14 +39,17 @@ fwrite($file, $response->getRawBody());
 
 // Reply message 
 $respMessage = 'Hello, your audio ID is '. $messageID; 
+$respMessage2 = 'Hello, your filename is '. $fileName; 
 break; 
 default: 
 // Reply message 
 $respMessage = 'Please send audio only';
 break; 
 } 
-$textMessageBuilder = new TextMessageBuilder($respMessage); 
+$textMessageBuilder = new TextMessageBuilder($respMessage,$respMessage2); 
+
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
+
 } 
 } 
 } 
