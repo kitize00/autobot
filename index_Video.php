@@ -27,11 +27,11 @@ $messageID = $event['message']['id'];
     
 // Create video file on server. 
     
-//$fileID = $messageID; 
-//$response = $bot->getMessageContent($fileID); 
-//$fileName = 'linebot.mp4'; 
-//$file = fopen($fileName, 'w'); 
-//fwrite($file, $response->getRawBody()); 
+$fileID = $messageID; 
+$response = $bot->getMessageContent($fileID); 
+$fileName = 'linebot.mp4'; 
+$file = fopen($fileName, 'w'); 
+fwrite($file, $response->getRawBody()); 
     
 // Reply message
 $respMessage = 'Hello, your video ID is '. $messageID; 
@@ -49,5 +49,5 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Video1";
+echo "OK Video2";
 
