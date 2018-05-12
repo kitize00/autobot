@@ -53,4 +53,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Audio1 ";
+echo "OK Audio2 ";
