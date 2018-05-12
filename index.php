@@ -33,7 +33,7 @@ $messageID = $event['message']['id'];
 // Create audio file on server. 
 $fileID =$messageID; 
 $response = $bot->getMessageContent($fileID); 
-$fileName = 'linebot.mp3'; 
+$fileName = 'linebot.m4a'; 
 $file = fopen($fileName, 'w'); 
 fwrite($file, $response->getRawBody()); 
 
@@ -53,4 +53,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Audio3";
+echo "OK Audio1";
