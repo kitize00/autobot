@@ -43,4 +43,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 }
 } 
-echo "OK";
+echo "OK Location";
