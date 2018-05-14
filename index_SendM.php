@@ -38,4 +38,4 @@ $textMessageBuilder = new TextMessageBuilder($respMessage);
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 } 
 } 
-echo "OK Message1";
+echo "OK SendMessage1";
