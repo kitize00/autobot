@@ -20,7 +20,7 @@ foreach ($events['events'] as $event) {
 $replyToken = $event['replyToken']; 
 
 // Sticker 
-$packageId = 2; 
+$packageId = 3; 
 $stickerId = 410; 
 $httpClient = new CurlHTTPClient($channel_token); 
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret)); 
@@ -28,4 +28,4 @@ $textMessageBuilder = new StickerMessageBuilder($packageId, $stickerId);
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 } 
 } 
-echo "OK SendSticker2";
+echo "OK SendSticker1";
