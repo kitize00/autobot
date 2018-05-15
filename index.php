@@ -21,11 +21,11 @@ $replyToken = $event['replyToken'];
 
 // Sticker 
 $packageId = 2; 
-$stickerId = 31; 
+$stickerId = 36; 
 $httpClient = new CurlHTTPClient($channel_token); 
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret)); 
 $textMessageBuilder = new StickerMessageBuilder($packageId, $stickerId); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 } 
 } 
-echo "OK SendSticker3";
+echo "OK SendSticker1";
