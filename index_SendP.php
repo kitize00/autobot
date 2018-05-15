@@ -30,4 +30,4 @@ $textMessageBuilder = new ImageMessageBuilder($originalContentUrl, $previewImage
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 } 
 } 
-echo "OK";
+echo "OK SendPicture";
