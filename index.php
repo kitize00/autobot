@@ -44,4 +44,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 }
 } 
-echo "OK File";
+echo "OK FileGroup";
