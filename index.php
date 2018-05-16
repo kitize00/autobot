@@ -27,12 +27,12 @@ $replyToken = $event['replyToken'];
 $respMessage = 'Thanks you. I try to be your best friend.'; 
 $respMessage1 = $event['timestamp'];
  
-$httpClient = new CurlHTTPClient($channel_token,$respMessage1); 
+$httpClient = new CurlHTTPClient($channel_token); 
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret)); 
  
-$textMessageBuilder = new TextMessageBuilder($respMessage); 
+$textMessageBuilder = new TextMessageBuilder($respMessage,$respMessage1); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 } 
 } 
 } 
-echo "OK Follow2";
+echo "OK Follow3";
