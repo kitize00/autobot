@@ -21,7 +21,7 @@ foreach ($events['events'] as $event) {
 if ($event['type'] == 'follow') { 
 
 // Get replyToken 
-$replyToken = $event['replyToken']; 
+$replyToken = $event['userId']; 
 
 // Greeting 
 $respMessage = 'Thanks you. I try to be your best friend.'; 
@@ -35,4 +35,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Follow3";
+echo "OK Follow1";
