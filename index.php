@@ -21,11 +21,11 @@ foreach ($events['events'] as $event) {
 if ($event['type'] == 'follow') { 
 
 // Get replyToken 
-$replyToken = $event['userId']; 
+$replyToken = $event['replyToken']; 
 
 // Greeting 
 $respMessage = 'Thanks you. I try to be your best friend.'; 
-$respMessage1 = $event['timestamp'];
+$respMessage1 = $event['userId'];
  
 $httpClient = new CurlHTTPClient($channel_token); 
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret)); 
@@ -35,4 +35,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Follow1";
+echo "OK Follow2";
