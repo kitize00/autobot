@@ -1,6 +1,8 @@
 <?php 
+/** 
+* Use for return easy answer. 
+*/ 
 require_once('./vendor/autoload.php'); 
-
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient; 
 use \LINE\LINEBot; 
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder; 
@@ -13,12 +15,13 @@ $channel_secret = '9b9944d9c68676a215b2efa60ae862c9';
 $content = file_get_contents('php://input'); 
 $events = json_decode($content, true); 
 if (!is_null($events['events'])) { 
-
+  
 // Loop through each event 
 foreach ($events['events'] as $event) {
+  
 // Line API send a lot of event type, we interested in message only. 
 if ($event['type'] == 'message' && $event['message']['type'] == 'text') { 
-
+  
 // Get replyToken 
 $replyToken = $event['replyToken']; 
 switch($event['message']['text']) { 
@@ -28,11 +31,11 @@ break;
 case 'ที่อยู่': 
 $respMessage = '99/451 Muang Nonthaburi'; 
 break; 
-case 'ชื่อ': 
+case 'boss': 
 $respMessage = '089-2541545'; 
 break; 
-case 'ช่วยเหลือ': 
-$respMessage = '==วิธีการใช้งาน=='<BR>'พิมม์ คำว่า '<BR>'-โทร'<BR>'-ที่อยู่'<BR>'จะแสดงรายละเอียดออกมา'; 
+case 'ช่วย': 
+$respMessage = 'วิธีใช้งาน ......'; 
 break; 
 default: 
 break; 
@@ -44,4 +47,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Operater";
+echo "OK Operator";
