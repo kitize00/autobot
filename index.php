@@ -1,7 +1,5 @@
 <?php 
-/** 
-* Use for return easy answer. 
-*/ 
+
 require_once('./vendor/autoload.php'); 
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient; 
 use \LINE\LINEBot; 
@@ -35,7 +33,7 @@ case 'boss':
 $respMessage = '089-2541545'; 
 break; 
 case 'ช่วย': 
-$respMessage = 'วิธีใช้งาน ......'; 
+$respMessage = 'วิธีใช้งาน ให้พิมม์ <br> โทร <br> ที่อยุ่ <br> ช่วย <br>จะแสดงรายละเอียดออกมา'; 
 break; 
 default: 
 break; 
@@ -47,4 +45,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Operator";
+echo "OK Operator1";
