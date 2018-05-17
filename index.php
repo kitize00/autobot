@@ -34,7 +34,7 @@ $respMessage = '089-2541545';
 break; 
 case 'ช่วย': 
     
-$respMessage = 'วิธีใช้งาน ให้พิมม์'. "\r\n".'โทร '."\r\n".'ที่อยุ่'."\r\n".'ช่วย'."\r\n".'จะแสดงรายละเอียดออกมา';
+$respMessage = 'วิธีใช้งาน ให้พิมม์'. "\n".'โทร '."\n".'ที่อยุ่'."\n".'ช่วย'."\n".'จะแสดงรายละเอียดออกมา';
   //'โทร'.'ที่อยุ่'.'ช่วย'.'จะแสดงรายละเอียดออกมา'; 
 break; 
 default: 
@@ -47,4 +47,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Operator1";
+echo "OK Operator2";
