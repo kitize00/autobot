@@ -33,8 +33,8 @@ case 'boss':
 $respMessage = '089-2541545'; 
 break; 
 case 'ช่วย': 
-    $a='วิธีใช้งาน ให้พิมม์ '."/n";
-    $b='โทร '."/n";
+    $a='วิธีใช้งาน ให้พิมม์ '."\r\n";
+    $b='โทร '."\r\n";
    // $c='ที่อยุ่'/n;
     //$d='ช่วย'/n;
     //$e='จะแสดงรายละเอียดออกมา';
@@ -51,4 +51,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Operator4";
+echo "OK Operator1";
