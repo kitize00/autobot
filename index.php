@@ -33,7 +33,7 @@ case 'boss':
 $respMessage = '089-2541545'; 
 break; 
 case 'ช่วย': 
-$respMessage = 'วิธีใช้งาน ให้พิมม์  '+eacho "<br>";+'โทร' +eacho"<br>"; +'ที่อยุ่'+eacho "<br>";+ 'ช่วย' +eacho "<br>";+'จะแสดงรายละเอียดออกมา'; 
+$respMessage = 'วิธีใช้งาน ให้พิมม์  '+'โทร' +'ที่อยุ่'+ 'ช่วย' +'จะแสดงรายละเอียดออกมา'; 
 break; 
 default: 
 break; 
