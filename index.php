@@ -33,7 +33,12 @@ case 'boss':
 $respMessage = '089-2541545'; 
 break; 
 case 'ช่วย': 
-$respMessage = 'วิธีใช้งาน ให้พิมม์  '.<br/>.'asdf';
+    $a='วิธีใช้งาน ให้พิมม์';
+    $b='โทร';
+    $c='ที่อยุ่';
+    $d='ช่วย';
+    $e='จะแสดงรายละเอียดออกมา';
+$respMessage = $a.$b.$c.$d.$e;
   //'โทร'.'ที่อยุ่'.'ช่วย'.'จะแสดงรายละเอียดออกมา'; 
 break; 
 default: 
@@ -46,4 +51,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Operator1";
+echo "OK Operator2";
