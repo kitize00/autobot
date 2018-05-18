@@ -36,7 +36,7 @@ $params = array(
 ); 
 $statement = $connection->prepare("INSERT INTO appointments (time, content) VALUES (:time, :content)"); 
 $result = $statement->execute($params); 
-  echo $result ;
+  
 $respMessage = 'Your appointment has saved.'; 
 }else{ 
 $respMessage = 'You can send appointment like this "12.00,House keeping." '; 
@@ -48,6 +48,6 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Appointment1 "; 
-
+echo "OK Appointment2 "; 
+echo "$host" ;
 
