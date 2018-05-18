@@ -4,8 +4,9 @@ use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot; 
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder; 
 
-$channel_token = '2MCOyCeaBipmw3ZzJG8BrsiO4KzCoaoPddMgbZtEu5HHVeIaWU+PDKcCZRJEY76zqxv56d15kZeMoU/vQ0zuzPFlbhFM7AhRMZwLrSkLdciLCuKUgV6aFrvAAuuG1mMWe7DCzfEW9FfHQhJR4F/m0AdB04t89/1O/w1cDnyilFU='; 
-$channel_secret = 'd4afd7da941ac195c155fe67dcb5a338'; 
+// Token 
+$channel_token = 'AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=';
+$channel_secret = '9b9944d9c68676a215b2efa60ae862c9'; 
 
 // Get message from Line API 
 $content = file_get_contents('php://input'); 
@@ -24,10 +25,10 @@ $replyToken = $event['replyToken'];
 // Split message then keep it in database. 
 $appointments = explode(',', $event['message']['text']); 
 if(count($appointments) == 2) { 
-$host = 'ec2-174-129-223-193.compute-1.amazonaws.com'; 
-$dbname = 'd74bjtc28mea5m'; 
-$user = 'eozuwfnzmgflmu';
-$pass = '2340614a293db8e8a8c02753cd5932cdee45ab90bfcc19d0d306754984cbece1'; 
+$host = 'ec2-54-243-129-189.compute-1.amazonaws.com'; 
+$dbname = 'ddad3lvtccl8i9'; 
+$user = 'jknxgucpqtqspw';
+$pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
 $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
 $params = array( 
 'time' => $appointments[0], 
@@ -46,4 +47,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK";
+echo "OK Appointment";
