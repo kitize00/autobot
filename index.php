@@ -48,8 +48,8 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Appointment1 "; 
-<br/>
+echo "OK Appointment1 "."/n"; 
+
 echo $channel_token;
 /*
 $con= mysqli_connect("ec2-54-243-129-189.compute-1.amazonaws.com","jknxgucpqtqspw","e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5","ddad3lvtccl8i9") or die("Error: " . mysqli_error($con));
