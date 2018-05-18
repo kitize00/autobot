@@ -1,4 +1,12 @@
-<?php 
+<!DOCTYPE html>
+<html>
+<body>
+<?php
 <center>
 echo "kitithat";
 </center>
+?>
+
+
+</body>
+</html>
