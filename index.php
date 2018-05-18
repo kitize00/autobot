@@ -47,6 +47,6 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 } 
-echo "OK Appointment "; 
-$result = $connection->query("SELECT * FROM appointments );
+echo "OK Appointment1 "; 
+
 echo $result ;
