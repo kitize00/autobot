@@ -24,22 +24,23 @@ if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 $replyToken = $event['replyToken']; 
 switch($event['message']['text']) { 
 case 'โทร': 
-$respMessage = '089-5124512'; 
+$respMessage = '083-5344-701'; 
 break; 
 case 'ที่อยู่': 
-$respMessage = '99/451 Muang Nonthaburi'; 
+$respMessage = ' อ.หาดใหญ่ จ.สงขลา 90110'; 
 break; 
-case 'boss': 
+case 'บช.': 
 $respMessage = '089-2541545'; 
 break; 
 case 'ช่วย': 
     $a='วิธีใช้งาน ให้พิมม์'. "\n";
     $b='โทร '."\n";
     $c='ที่อยุ่'."\n";
-    $d='ช่วย'."\n";
-    $e='จะแสดงรายละเอียดออกมา';
+    $d='บช'."\n";
+    $e='ช่วย'."\n";
+    $f='จะแสดงรายละเอียดออกมา';
     
-$respMessage = $a.$b.$c.$d.$e;
+$respMessage = $a.$b.$c.$d.$e.$f;
   //'โทร'.'ที่อยุ่'.'ช่วย'.'จะแสดงรายละเอียดออกมา'; 
 break; 
 default: 
