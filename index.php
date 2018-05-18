@@ -48,7 +48,7 @@ $amount = 1;
 if($result){ 
 $amount = $result->rowCount(); 
 } 
-$respMessage = 'จำนวนคนตอบว่ำเพื่อน = '.$amount; 
+$respMessage = 'จำนวนคนตอบว่าเพื่อน = '.$amount; 
 break; 
 case '2': 
     
@@ -67,7 +67,7 @@ $amount = 1;
 if($result){ 
 $amount = $result->rowCount(); 
 } 
-$respMessage = 'จำนวนคนตอบว่ำแฟน = '.$amount; 
+$respMessage = 'จำนวนคนตอบว่าแฟน = '.$amount; 
 break; 
 case '3': 
     
@@ -86,7 +86,7 @@ $amount = 1;
 if($result){ 
 $amount = $result->rowCount(); 
 } 
-$respMessage = 'จำนวนคนตอบว่ำพ่อแม่ = '.$amount; 
+$respMessage = 'จำนวนคนตอบว่าพ่อแม่ = '.$amount; 
 break; 
 case '4': 
     
@@ -105,12 +105,12 @@ $amount = 1;
 if($result){ 
 $amount = $result->rowCount(); 
 } 
-$respMessage = 'จำนวนคนตอบว่ำบุคคลอื่นๆ = '.$amount; 
+$respMessage = 'จำนวนคนตอบว่าบุคคลอื่นๆ = '.$amount; 
  
 break; 
 default: 
 $respMessage = " 
-บุคคลที่โทรหำบ่อยที่สุด คือ? \n\r 
+บุคคลที่โทรหาคุณบ่อยที่สุด คือ? \n\r 
 กด 1 เพื่อน \n\r 
 กด 2 แฟน \n\r 
 กด 3 พ่อแม่ \n\r 
@@ -132,4 +132,4 @@ error_log($e->getMessage());
 } 
 } 
 }
-echo "OK";
+echo "OK Poll1";
