@@ -49,7 +49,7 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 } 
 } 
 echo "OK Appointment4 "; 
-echo "\n";
+echo <br />;
 
 echo $channel_secret;
 /*
