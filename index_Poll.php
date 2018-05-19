@@ -15,11 +15,14 @@ if (!is_null($events['events'])) {
   
 // Loop through each event 
 foreach ($events['events'] as $event) { 
+  
 // Line API send a lot of event type, we interested in message only. 
 if ($event['type'] == 'message' && $event['message']['type'] == 'text') { 
+  
 // Get replyToken 
 $replyToken = $event['replyToken']; 
 try { 
+  
 // Check to see user already answer 
 $host = 'ec2-54-243-129-189.compute-1.amazonaws.com'; 
 $dbname = 'ddad3lvtccl8i9'; 
