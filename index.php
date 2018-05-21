@@ -42,7 +42,7 @@ if (!is_null($events['events'])) {
                         date('Y-m-d'),
                         $event['source']['userId']);
                     $result = $connection->query($sql);
-
+echo $sql;
                     if($result !== false && $result->rowCount() >0) {
                         // Save database
                         $params = array(
@@ -122,4 +122,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slip 2";
+echo "OK Slip 1";
