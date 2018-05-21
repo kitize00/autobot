@@ -38,11 +38,11 @@ if (!is_null($events['events'])) {
                 case 'text':
                     
                     $sql = sprintf(
-                        "SELECT * FROM slips WHERE slip_date='now()'  ", 
-                        date('Y-m-d'),
-                        $event['source']['userId']);
+                        "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ",
+			    date('Y-m-d'),
+			    $event['source']['userId']);
                     $result = $connection->query($sql);
-echo $sql;
+
                     if($result !== false && $result->rowCount() >0) {
                         // Save database
                         $params = array(
@@ -122,4 +122,4 @@ echo $sql;
 	}
 }
 
-echo "OK Slip 1";
+echo "OK Slip 2";
