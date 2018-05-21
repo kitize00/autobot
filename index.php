@@ -38,8 +38,8 @@ if (!is_null($events['events'])) {
                 case 'text':
                     
                     $sql = sprintf(
-                        "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ",
-			    date('Y-m-d'),
+                        "SELECT * FROM slips WHERE slip_date='now()' AND user_id='%s' ",
+			    
 			    $event['source']['userId']);
                     $result = $connection->query($sql);
 
@@ -122,4 +122,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slip 2";
+echo "OK Slip 3";
