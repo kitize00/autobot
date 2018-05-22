@@ -38,7 +38,7 @@ $sql = sprintf(
 date('Y-m-d'), 
 $event['source']['userId']); 
 $result = $connection->query($sql); 
-if($result != false && $result->rowCount() >0) { 
+if($result !== false && $result->rowCount() >0) { 
  
 // Save database 
 $params = array( 
@@ -112,4 +112,4 @@ break;
 } 
 } 
 } 
-echo "OK Slip 2";
+echo "OK Slip 1";
