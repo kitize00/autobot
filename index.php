@@ -38,7 +38,7 @@ $sql = sprintf(
 date('Y-m-d'), 
 $event['source']['userId']); 
 $result = $connection->query($sql); 
-if($result !== false) { 
+if($result != false && $result->rowCount() >0) { 
  
 // Save database 
 $params = array( 
