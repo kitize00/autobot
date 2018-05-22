@@ -12,6 +12,7 @@ $channel_secret = '9b9944d9c68676a215b2efa60ae862c9';
 // Create bot 
 $httpClient = new CurlHTTPClient($channel_token); 
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret)); 
+
 // Database connection 
 $host = 'ec2-54-243-129-189.compute-1.amazonaws.com'; 
 $dbname = 'ddad3lvtccl8i9'; 
@@ -19,12 +20,15 @@ $user = 'jknxgucpqtqspw';
 $pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
 
 $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
+
 // Get message from Line API 
 $content = file_get_contents('php://input'); 
 $events = json_decode($content, true); 
 if (!is_null($events['events'])) { 
+ 
 // Loop through each event 
 foreach ($events['events'] as $event) { 
+ 
 // Line API send a lot of event type, we interested in message only. 
 if ($event['type'] == 'message') { 
 switch($event['message']['type']) { 
@@ -34,7 +38,8 @@ $sql = sprintf(
 date('Y-m-d'), 
 $event['source']['userId']); 
 $result = $connection->query($sql); 
-if($result !== false && $result->rowCount() >0) { 
+if($result !== false) { 
+ 
 // Save database 
 $params = array( 
 'name' => $event['message']['text'], 
@@ -52,6 +57,7 @@ $params = array(
 $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)');
 $effect = $statement->execute($params); 
 } 
+  
 // Bot response 
 $respMessage = 'Your data has saved.'; 
 $replyToken = $event['replyToken']; 
@@ -59,11 +65,13 @@ $textMessageBuilder = new TextMessageBuilder($respMessage);
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 break; 
 case 'image': 
+  
 // Get file content. 
 $fileID = $event['message']['id']; 
 $response = $bot->getMessageContent($fileID); 
 $fileName = md5(date('Y-m-d')).'.jpg'; 
 if ($response->isSucceeded()) { 
+ 
 // Create file. 
 $file = fopen($fileName, 'w'); 
 fwrite($file, $response->getRawBody()); 
@@ -73,6 +81,7 @@ date('Y-m-d'),
 $event['source']['userId']); 
 $result = $connection->query($sql); 
 if($result !== false && $result->rowCount() >0) { 
+ 
 // Save database 
 $params = array( 
 'image' => $fileName, 
@@ -91,6 +100,7 @@ $statement = $connection->prepare('INSERT INTO slips (user_id, image, slip_date)
 $statement->execute($params); 
 } 
 } 
+  
 // Bot response 
 $respMessage = 'Your data has saved.'; 
 $replyToken = $event['replyToken']; 
@@ -102,4 +112,4 @@ break;
 } 
 } 
 } 
-echo "OK Slip 1";
+echo "OK Slip 2";
