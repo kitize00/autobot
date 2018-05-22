@@ -56,7 +56,7 @@ $params = array(
 'slip_date' => date('Y-m-d'), 
 'name' => $event['message']['text'], 
 ); 
-$statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)');
+$statement = $connection->prepare('INSERT INTO slips (user_id) VALUES (:user_id)');
 $effect = $statement->execute($params); 
 } 
   
@@ -114,4 +114,4 @@ break;
 } 
 } 
 } 
-echo "OK Slip 1";
+echo "OK Slip 2";
