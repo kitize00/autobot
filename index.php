@@ -38,7 +38,7 @@ $sql = sprintf(
 date('Y-m-d'), 
 $event['source']['userId']); 
 $result = $connection->query($sql); 
-  echo $result;
+  echo "result";
 /*if($result !== false && $result->rowCount() >0) { 
  
 // Save database 
@@ -113,4 +113,4 @@ break;
 } 
 } 
 } 
-echo "OK Slip 2";
+echo "OK Slip 1";
