@@ -37,9 +37,10 @@ $sql = sprintf(
 "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
 date('Y-m-d'), 
 $event['source']['userId']); 
-$result = $connection->query($sql); 
-  echo "result";
-/*if($result !== false && $result->rowCount() >0) { 
+//$result = $connection->query($sql); 
+  $result = false; 
+  
+if($result !== false && $result->rowCount() >0) { 
  
 // Save database 
 $params = array( 
@@ -107,7 +108,7 @@ $respMessage = 'Your data has saved.';
 $replyToken = $event['replyToken']; 
 $textMessageBuilder = new TextMessageBuilder($respMessage); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
- */
+ 
 break; 
 } 
 } 
