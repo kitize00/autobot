@@ -38,7 +38,8 @@ $sql = sprintf(
 date('Y-m-d'), 
 $event['source']['userId']); 
 $result = $connection->query($sql); 
-if($result !== false && $result->rowCount() >0) { 
+  echo $result;
+/*if($result !== false && $result->rowCount() >0) { 
  
 // Save database 
 $params = array( 
@@ -106,10 +107,10 @@ $respMessage = 'Your data has saved.';
 $replyToken = $event['replyToken']; 
 $textMessageBuilder = new TextMessageBuilder($respMessage); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
- 
+ */
 break; 
 } 
 } 
 } 
 } 
-echo "OK Slip 1";
+echo "OK Slip 2";
