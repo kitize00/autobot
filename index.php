@@ -38,12 +38,14 @@ if (!is_null($events['events'])) {
                 case 'text':
                     
                     $sql = sprintf(
-                        "SELECT * FROM slips WHERE slip_date='now()' AND user_id='%s' ",
+                        "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
+                        date('Y-m-d'),
+                        $event['source']['userId']);
 			    
 			    $event['source']['userId']);
                     $result = $connection->query($sql);
 
-                    if($result !== false && $result->rowCount() >0) {
+                    if($result !== false ) {
                         // Save database
                         $params = array(
                             'name' => $event['message']['text'],
@@ -70,7 +72,7 @@ if (!is_null($events['events'])) {
                     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
                     break;
-                case 'image':
+              case 'image':
 
                     // Get file content.
                     $fileID = $event['message']['id'];
@@ -99,7 +101,9 @@ if (!is_null($events['events'])) {
                             $statement = $connection->prepare('UPDATE slips SET image=:image WHERE slip_date=:slip_date AND user_id=:user_id');
                             $statement->execute($params);
                             
-                        } else {
+                        }
+			    
+			    else {
                             $params = array(
                                 'user_id' => $event['source']['userId'] ,
                                 'image' => $fileName,
@@ -122,4 +126,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slip 3";
+echo "OK Slip 1";
