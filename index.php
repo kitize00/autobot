@@ -36,24 +36,34 @@ if (!is_null($events['events'])) {
             switch($event['message']['type']) {
                 case 'text':
                     
-                   $sql = sprintf(
+                    $sql = sprintf(
                         "SELECT * FROM slips WHERE  user_id='%s' ", 
-                        
+                       
                         $event['source']['userId']);
-
-                        
                     $result = $connection->query($sql);
 
-                   // Insert 
-		$params = array(
+                    if($result !== false && $result->rowCount() >0) {
+                        // Save database
+                        $params = array(
                             'name' => $event['message']['text'],
                             
                             'user_id' => $event['source']['userId'],
                         );
-$statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id,  :name)');
+                        $statement = $connection->prepare('UPDATE slips SET name=:name WHERE  user_id=:user_id'); 
+                        $statement->execute($params);
+                    } else {
+                        $params = array(
+                            'user_id' => $event['source']['userId'] ,
+                            
+                            'name' => $event['message']['text'],
+                        );
+                        $statement = $connection->prepare('INSERT INTO slips (user_id,  name) VALUES (:user_id,  :name)');
+                         
+                        $effect = $statement->execute($params);
+                    }
 
                     // Bot response 
-                    $respMessage = 'Your data has saved TExt.';
+                    $respMessage = 'Your data has saved.';
                     $replyToken = $event['replyToken'];
                     $textMessageBuilder = new TextMessageBuilder($respMessage);
                     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
@@ -67,4 +77,4 @@ $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) 
 	}
 }
 
-echo "OK Slips2";
+echo "OK Slips1";
