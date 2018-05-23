@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
             switch($event['message']['type']) {
                 case 'text':
                     
-                    $sql ="SELECT * FROM slips WHERE user_id='$event['source']['userId']' " ;
+                    $sql ="SELECT * FROM slips WHERE user_id='".$event['source']['userId']."' " ;
                         
                     $result = $connection->query($sql);
 
@@ -75,4 +75,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slips2";
+echo "OK Slips1";
