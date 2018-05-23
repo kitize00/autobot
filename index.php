@@ -19,8 +19,7 @@ $host = 'ec2-54-243-129-189.compute-1.amazonaws.com';
 $dbname = 'ddad3lvtccl8i9'; 
 $user = 'jknxgucpqtqspw';
 $pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
-
-$connection = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $database), $username, $password);
+$connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
 
 // Get message from Line API
 $content = file_get_contents('php://input');
@@ -32,26 +31,50 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
     
         // Line API send a lot of event type, we interested in message only.
-		if ($event['type'] == 'message') {           
-           
+		if ($event['type'] == 'message') {
+
+            switch($event['message']['type']) {
+                case $event['message']['text']:
                     
-			  
-$query = "INSERT INTO slips (user_id, slip_date, name) values ('3', '2018-05-21','test')";
-$myPDO->execute($query);
-                   
+                    $sql = sprintf(
+                        "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
+                        date('Y-m-d'),
+                        $event['source']['userId']);
+                    $result = $connection->query($sql);
+
+                    if($result !== false && $result->rowCount() >0) {
+                        // Save database
+                        $params = array(
+                            'name' => $event['message']['text'],
+                            'slip_date' => date('Y-m-d'),
+                            'user_id' => $event['source']['userId'],
+                        );
+                        $statement = $connection->prepare('UPDATE slips SET name=:name WHERE slip_date=:slip_date AND user_id=:user_id'); 
+                        $statement->execute($params);
+                    } else {
+                        $params = array(
+                            'user_id' => $event['source']['userId'] ,
+                            'slip_date' => date('Y-m-d'),
+                            'name' => $event['message']['text'],
+                        );
+                        $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)');
+                         
+                        $effect = $statement->execute($params);
+                    }
+
                     // Bot response 
                     $respMessage = 'Your data has saved.';
                     $replyToken = $event['replyToken'];
                     $textMessageBuilder = new TextMessageBuilder($respMessage);
                     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
-            
+                    break;
                 
                     
                     
-	  
+            }
 		}
 	}
 }
 
-echo "OK Slips1";
+echo "OK SLips1";
