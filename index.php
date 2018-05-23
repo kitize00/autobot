@@ -44,25 +44,13 @@ if (!is_null($events['events'])) {
                         
                     $result = $connection->query($sql);
 
-                    if($result == true ) {
-                        // Save database
-                        $params = array(
+                   // Insert 
+		$params = array(
                             'name' => $event['message']['text'],
                             'slip_date' => date('Y-m-d'),
                             'user_id' => $event['source']['userId'],
                         );
-                        $statement = $connection->prepare('INSERT INTO slips SET name=:name WHERE slip_date=:slip_date AND user_id=:user_id'); 
-                        $statement->execute($params);
-                    } else {
-                        $params = array(
-                            'user_id' => $event['source']['userId'] ,
-                            'slip_date' => date('Y-m-d'),
-                            'name' => $event['message']['text'],
-                        );
-                        $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)');
-                         
-                        $effect = $statement->execute($params);
-                    }
+$statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)');
 
                     // Bot response 
                     $respMessage = 'Your data has saved TExt.';
@@ -79,4 +67,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slips1";
+echo "OK Slips2";
