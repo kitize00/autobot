@@ -36,10 +36,8 @@ if (!is_null($events['events'])) {
             switch($event['message']['type']) {
                 case 'text':
                     
-                    $sql = sprintf(
-                        "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
-                        date('Y-m-d'),
-                        $event['source']['userId']);
+                    $sql ="SELECT * FROM slips WHERE user_id='$event['source']['userId']' " ;
+                        
                     $result = $connection->query($sql);
 
                     if($result !== false && $result->rowCount() >0) {
@@ -77,4 +75,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slips1";
+echo "OK Slips2";
