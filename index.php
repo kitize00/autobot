@@ -37,8 +37,8 @@ if (!is_null($events['events'])) {
                 case 'text':
                     
                    $sql = sprintf(
-                        "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
-                        date('Y-m-d'),
+                        "SELECT * FROM slips WHERE  user_id='%s' ", 
+                        
                         $event['source']['userId']);
 
                         
@@ -47,10 +47,10 @@ if (!is_null($events['events'])) {
                    // Insert 
 		$params = array(
                             'name' => $event['message']['text'],
-                            'slip_date' => now(),
+                            
                             'user_id' => $event['source']['userId'],
                         );
-$statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)');
+$statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id,  :name)');
 
                     // Bot response 
                     $respMessage = 'Your data has saved TExt.';
@@ -67,4 +67,4 @@ $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) 
 	}
 }
 
-echo "OK Slips1";
+echo "OK Slips2";
