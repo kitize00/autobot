@@ -18,7 +18,7 @@ $host = 'ec2-54-243-129-189.compute-1.amazonaws.com';
 $dbname = 'ddad3lvtccl8i9'; 
 $user = 'jknxgucpqtqspw';
 $pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
-$connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
+$connection = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $database), $username, $password);
 
 
 // Get message from Line API
