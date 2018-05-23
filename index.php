@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
                        
                        $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)'); 
                   
-			$statement->execute($params); 
+			$effect = $statement->execute($params);
                    
                     // Bot response 
                     $respMessage = 'Your data has saved.';
@@ -63,4 +63,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slips1";
+echo "OK Slips2";
