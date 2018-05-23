@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message') {
 
             switch($event['message']['type']) {
-                case $event['message']['text']:
+                case 'text':
                     
                     $sql = sprintf(
                         "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
