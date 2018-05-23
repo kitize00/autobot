@@ -19,7 +19,8 @@ $host = 'ec2-54-243-129-189.compute-1.amazonaws.com';
 $dbname = 'ddad3lvtccl8i9'; 
 $user = 'jknxgucpqtqspw';
 $pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
-$connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
+
+$connection = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $database), $username, $password);
 
 // Get message from Line API
 $content = file_get_contents('php://input');
@@ -35,10 +36,8 @@ if (!is_null($events['events'])) {
            
                     
 			  
-
-$statement = "INSERT INTO slips (user_id, slip_date, name) VALUES ('test', '2018-05-21','test')"; 
-//$result = $statement->execute($params); 
-$connection->execute($statement);
+$query = "INSERT INTO slips (user_id, slip_date, name) values ('3', '2018-05-21','test')";
+$myPDO->execute($query);
                    
                     // Bot response 
                     $respMessage = 'Your data has saved.';
