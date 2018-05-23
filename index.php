@@ -31,7 +31,7 @@ $params = array(
 'slip_date' => date('Y-m-d'), 
 'name' => $event['message']['text'], 
 ); 
-$statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)'); 
+$statement = $connection->prepare('INSERT INTO slips (name ,user_id, slip_name, slip_date, image ) VALUES (:name,:user_id, 'test', '2018-05-21' ,'test')'); 
 $statement->execute($params);
 
 
@@ -41,4 +41,4 @@ $statement->execute($params);
                     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 
-echo "OK Slips1";
+echo "OK Slips2";
