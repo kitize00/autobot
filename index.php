@@ -42,11 +42,8 @@ if (!is_null($events['events'])) {
                             'name' => $event['message']['text'],
                         );
 
-                    //$sql = sprintf("SELECT * FROM slips WHERE  user_id='%s' ", $event['source']['userId']); 
-                       
-                       $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)'); 
-                  
-			$effect = $statement->execute($params);
+$statement = $connection->prepare("INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, '2018-05-21','test')"); 
+$result = $statement->execute($params); 
                    
                     // Bot response 
                     $respMessage = 'Your data has saved.';
@@ -58,9 +55,9 @@ if (!is_null($events['events'])) {
                 
                     
                     
-            }
+	    }
 		}
 	}
 }
 
-echo "OK Slips2";
+echo "OK Slips1";
