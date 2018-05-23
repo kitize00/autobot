@@ -61,57 +61,15 @@ $effect = $statement->execute($params);
 } 
   
 // Bot response 
-$respMessage = 'Your data has saved.'; 
+$respMessage = 'Your data has saved TExt.'; 
 $replyToken = $event['replyToken']; 
 $textMessageBuilder = new TextMessageBuilder($respMessage); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
 break; 
-case 'image': 
-  
-// Get file content. 
-$fileID = $event['message']['id']; 
-$response = $bot->getMessageContent($fileID); 
-$fileName = md5(date('Y-m-d')).'.jpg'; 
-if ($response->isSucceeded()) { 
- 
-// Create file. 
-$file = fopen($fileName, 'w'); 
-fwrite($file, $response->getRawBody()); 
-$sql = sprintf( 
-"SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
-date('Y-m-d'), 
-$event['source']['userId']); 
-$result = $connection->query($sql); 
-if($result !== false && $result->rowCount() >0) { 
- 
-// Save database 
-$params = array( 
-'image' => $fileName, 
-'slip_date' => date('Y-m-d'), 
-'user_id' => $event['source']['userId'], 
-); 
-$statement = $connection->prepare('UPDATE slips SET image=:image WHERE slip_date=:slip_date AND user_id=:user_id'); 
-$statement->execute($params); 
-} else { 
-$params = array( 
-'user_id' => $event['source']['userId'] , 
-'image' => $fileName, 
-'slip_date' => date('Y-m-d'),
-); 
-$statement = $connection->prepare('INSERT INTO slips (user_id, image, slip_date) VALUES (:user_id, :image, :slip_date)'); 
-$statement->execute($params); 
-} 
-} 
-  
-// Bot response 
-$respMessage = 'Your data has saved.'; 
-$replyToken = $event['replyToken']; 
-$textMessageBuilder = new TextMessageBuilder($respMessage); 
-$response = $bot->replyMessage($replyToken, $textMessageBuilder); 
- 
-break; 
+
+
+}
 } 
 } 
 } 
-} 
-echo "OK Slip 2";
+echo "OK Slip 1";
