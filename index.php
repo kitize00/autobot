@@ -47,7 +47,7 @@ if (!is_null($events['events'])) {
                    // Insert 
 		$params = array(
                             'name' => $event['message']['text'],
-                            'slip_date' => date('Y-m-d'),
+                            'slip_date' => now(),
                             'user_id' => $event['source']['userId'],
                         );
 $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)');
@@ -67,4 +67,4 @@ $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) 
 	}
 }
 
-echo "OK Slips2";
+echo "OK Slips1";
