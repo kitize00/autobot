@@ -36,32 +36,18 @@ if (!is_null($events['events'])) {
             switch($event['message']['type']) {
                 case 'text':
                     
-                    $sql = sprintf(
-                        "SELECT * FROM slips WHERE  user_id='%s' ", 
-                       
-                        $event['source']['userId']);
-                    $result = $connection->query($sql);
-
-                    if($result == true && $result->rowCount() >0) {
-                        // Save database
-                        $params = array(
-                            'name' => $event['message']['text'],
-                            
-                            'user_id' => $event['source']['userId'],
-                        );
-                        $statement = $connection->prepare('UPDATE slips SET name=:name WHERE  user_id=:user_id'); 
-                        $statement->execute($params);
-                    } else {
-                        $params = array(
+			    $params = array(
                             'user_id' => $event['source']['userId'] ,
-                            
+                            'slip_date' => date('Y-m-d'),
                             'name' => $event['message']['text'],
                         );
-                        $statement = $connection->prepare('INSERT INTO slips (user_id,  name) VALUES (:user_id,  :name)');
-                         
-                        $effect = $statement->execute($params);
-                    }
 
+                    //$sql = sprintf("SELECT * FROM slips WHERE  user_id='%s' ", $event['source']['userId']); 
+                       
+                       $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES (:user_id, :slip_date, :name)'); 
+                  
+			$statement->execute($params); 
+                   
                     // Bot response 
                     $respMessage = 'Your data has saved.';
                     $replyToken = $event['replyToken'];
@@ -77,4 +63,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slips2";
+echo "OK Slips1";
