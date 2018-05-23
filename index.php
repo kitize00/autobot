@@ -31,10 +31,8 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
     
         // Line API send a lot of event type, we interested in message only.
-		if ($event['type'] == 'message') {
-
-            switch($event['message']['type']) {
-                case 'text':
+		if ($event['type'] == 'message') {           
+           
                     
 			    $params = array(
                             'user_id' => $event['source']['userId'] ,
@@ -51,13 +49,13 @@ $result = $statement->execute($params);
                     $textMessageBuilder = new TextMessageBuilder($respMessage);
                     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
-                    break;
+            
                 
                     
                     
-	    }
+	  
 		}
 	}
 }
 
-echo "OK Slips1";
+echo "OK Slips2";
