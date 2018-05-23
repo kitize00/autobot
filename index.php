@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
                             'slip_date' => date('Y-m-d'),
                             'user_id' => $event['source']['userId'],
                         );
-                        $statement = $connection->prepare('UPDATE slips SET name=:name WHERE slip_date=:slip_date AND user_id=:user_id'); 
+                        $statement = $connection->prepare('INSERT INTO slips SET name=:name WHERE slip_date=:slip_date AND user_id=:user_id'); 
                         $statement->execute($params);
                     } else {
                         $params = array(
@@ -79,4 +79,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slips2";
+echo "OK Slips1";
