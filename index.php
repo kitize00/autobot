@@ -34,7 +34,7 @@ if ($event['type'] == 'message') {
 switch($event['message']['type']) { 
 case 'text': 
 $sql = sprintf( 
-"SELECT * FROM slips WHERE user_id !== '$event['source']['userId']'); 
+"SELECT * FROM slips WHERE user_id = $event['source']['userId']"); 
 
 $result = $connection->query($sql); 
  
@@ -71,4 +71,4 @@ break;
 } 
 } 
 } 
-echo "OK Slip 2";
+echo "OK Slip 3";
