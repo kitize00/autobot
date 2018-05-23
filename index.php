@@ -44,7 +44,7 @@ if (!is_null($events['events'])) {
                         
                     $result = $connection->query($sql);
 
-                    if($result == true && $result->rowCount() >0) {
+                    if($result == true ) {
                         // Save database
                         $params = array(
                             'name' => $event['message']['text'],
@@ -79,4 +79,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-echo "OK Slips1";
+echo "OK Slips2";
