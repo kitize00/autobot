@@ -26,13 +26,13 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 
 
-$params = array( 
+/*$params = array( 
 'user_id' => $event['source']['userId'] , 
 'slip_date' => date('Y-m-d'), 
 'name' => $event['message']['text'], 
-); 
-$statement = $connection->prepare('INSERT INTO slips (name ,user_id, slip_name, slip_date, image ) VALUES (:name,:user_id, 'test', '2018-05-21' ,'test')'); 
-$statement->execute($params);
+); */
+$statement = "INSERT INTO slips (name ,user_id, slip_name, slip_date, image ) VALUES ('test','test', 'test', '2018-05-21' ,'test')"; 
+$connection->execute($statement);
 
 
                     $respMessage = 'Your data has saved.';
@@ -41,4 +41,4 @@ $statement->execute($params);
                     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 
-echo "OK Slips2";
+echo "OK Slips3";
