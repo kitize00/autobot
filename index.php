@@ -20,7 +20,7 @@ $user = 'jknxgucpqtqspw';
 $pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
 
 $myPDO = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $database), $username, $password);
-$query = "INSERT INTO users(id, name) values (3, 'CHITSANUK')";
+$query = "INSERT INTO test(name) values ('test')";
 $myPDO->execute($query);
 
 
