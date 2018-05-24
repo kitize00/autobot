@@ -64,7 +64,7 @@ $effect = $statement->execute($params);
 
 // Bot response 
 $respMessage = 'Your data has saved.'.$event['message']['id']; 
-  $respMessage1 = );; 
+  
 $replyToken = $event['replyToken']; 
 $textMessageBuilder = new TextMessageBuilder($respMessage); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
@@ -122,9 +122,9 @@ echo "OK Slip2";
 
 
 <h2>HTML Image</h2>
-
+<!--
 <img src="public/img/5905b55d316c98ef24463edad0a1fbb4.jpg" alt="Mountain View" width="500" height="377">
-
+-->
 
 </body>
 </html>
