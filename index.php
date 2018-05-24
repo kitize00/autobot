@@ -22,8 +22,12 @@ $pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5';
 $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
 
 
+$params = array( 
 
-$query = "INSERT INTO test(name) values ('test')";
+'name' => 'test', 
+); 
+$statement = "INSERT INTO test(name) values (:name)";
+$result = $statement->execute($params); 
 //$connection->execute($query);
 
 /*
