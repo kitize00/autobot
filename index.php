@@ -23,6 +23,7 @@ $myPDO = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $dbname), $user, $pas
 $query = "INSERT INTO test(name) values ('test')";
 $myPDO->execute($query);
 
+/*
 // Get message from Line API 
 $content = file_get_contents('php://input');
  $events = json_decode($content, true); 
@@ -32,7 +33,7 @@ $respMessage = 'Your data has saved.';
 $replyToken = $event['replyToken']; 
 $textMessageBuilder = new TextMessageBuilder($respMessage); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
-
+*/
 
 
 echo "OK Slips1";
