@@ -1,5 +1,5 @@
 <?php
- 
+ /*
 require_once('./vendor/autoload.php');
 
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
@@ -12,7 +12,7 @@ $channel_secret = '9b9944d9c68676a215b2efa60ae862c9';
 // Create bot
 $httpClient = new CurlHTTPClient($channel_token);
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
-
+*/
 // Database connection 
 $host = 'ec2-54-243-129-189.compute-1.amazonaws.com'; 
 $dbname = 'ddad3lvtccl8i9'; 
