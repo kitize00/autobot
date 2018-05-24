@@ -26,7 +26,7 @@ $params = array(
 
 'name' => 'test', 
 ); 
-$statement = "INSERT INTO test(name) values (:name)";
+$statement = 'INSERT INTO test(name) values (:name)';
 $result = $statement->execute($params); 
 //$connection->execute($query);
 
