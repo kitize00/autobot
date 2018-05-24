@@ -39,4 +39,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 */
 
 
-echo "OK Slips1";
+echo "OK INsert SQL PDO";
