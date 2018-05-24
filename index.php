@@ -23,8 +23,7 @@ $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass);
 
 
 
-$statement = 'INSERT INTO test(name) values ('test')';
-$result = $statement->execute(); 
+$count = $connection->exec("INSERT INTO test(name) values ('test')"); 
 //$connection->execute($query);
 
 /*
