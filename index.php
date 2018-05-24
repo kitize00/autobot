@@ -140,7 +140,9 @@ if ($response->isSucceeded()) {
     error_log($response->getHTTPStatus() . ' ' . $response->getRawBody());
 }
 
-  
+  GET https://api.line.me/v2/bot/message/8011086635888/content
+
+
   
  
   ?>
