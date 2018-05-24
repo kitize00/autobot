@@ -117,7 +117,7 @@ break;
 } 
 } 
 } 
-echo "OK Slip2";
+echo "OK Slip3";
 ?>
 
 
@@ -135,8 +135,8 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9b9944d9c68676a215b2e
 $response = $bot->getProfile('U6a900c42ef3d3dad5c3fbdb763d69552');
 if ($response->isSucceeded()) {
     $profile = $response->getJSONDecodedBody();
-    echo $profile['displayName'].'\n\r';
-    echo $profile['pictureUrl'];
+    echo $profile['displayName']."<br>";
+    echo $profile['pictureUrl']."<br>";
     echo $profile['statusMessage'];
 }
   
