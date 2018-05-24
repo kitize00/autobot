@@ -117,7 +117,7 @@ break;
 } 
 } 
 echo "OK Slip2";
-
+?>
 
 
 <h2>HTML Image</h2>
