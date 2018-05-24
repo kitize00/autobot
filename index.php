@@ -18,7 +18,10 @@ $host = 'ec2-54-243-129-189.compute-1.amazonaws.com';
 $dbname = 'ddad3lvtccl8i9'; 
 $user = 'jknxgucpqtqspw';
 $pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
-$connection = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $database), $username, $password);
+
+$myPDO = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $database), $username, $password);
+$query = "INSERT INTO users(id, name) values (3, 'CHITSANUK')";
+$myPDO->execute($query);
 
 
 // Get message from Line API
@@ -26,13 +29,7 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 
 
-/*$params = array( 
-'user_id' => $event['source']['userId'] , 
-'slip_date' => date('Y-m-d'), 
-'name' => $event['message']['text'], 
-); */
-$statement = "INSERT INTO slips (name ,user_id, slip_name, slip_date, image ) VALUES ('test','test', 'test', '2018-05-21' ,'test')"; 
-$connection->execute($statement);
+
 
 
                     $respMessage = 'Your data has saved.';
@@ -41,4 +38,4 @@ $connection->execute($statement);
                     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 
-echo "OK Slips3";
+echo "OK Slips1";
