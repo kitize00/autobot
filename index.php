@@ -117,7 +117,7 @@ break;
 } 
 } 
 } 
-echo "OK Slip3";
+echo "OK Slip1";
 ?>
 
 
@@ -137,7 +137,7 @@ if ($response->isSucceeded()) {
     $profile = $response->getJSONDecodedBody();
     echo $profile['displayName']."<br>";
     echo $profile['pictureUrl']."<br>";
-    echo $profile['statusMessage'];
+    echo $profile['statusMessage']."<br>";
 }
   
   
