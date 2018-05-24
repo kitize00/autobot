@@ -128,8 +128,8 @@ echo "OK Slip3";
 
   
 <?php 
-  
-/*$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=');
+  /*
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=');
   
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9b9944d9c68676a215b2efa60ae862c9']);
 $response = $bot->getMessageContent('9b9944d9c68676a215b2efa60ae862c9');
@@ -142,9 +142,9 @@ if ($response->isSucceeded()) {
 }
 
 
-  */
   
-  echo $channel_secret 
+  */
+ 
   ?>
 </body>
 </html>
