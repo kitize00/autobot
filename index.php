@@ -13,17 +13,20 @@ $channel_secret = '9b9944d9c68676a215b2efa60ae862c9';
 $httpClient = new CurlHTTPClient($channel_token);
 $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
 */
-/*
-// Database connection 
-$host = 'ec2-54-243-129-189.compute-1.amazonaws.com'; 
-$dbname = 'ddad3lvtccl8i9'; 
-$user = 'jknxgucpqtqspw';
-$pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
 
-$myPDO = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $dbname), $user, $pass);
+// Database connection 
+$host = 'ec2-174-129-223-193.compute-1.amazonaws.com';
+
+$dbname = 'd74bjtc28mea5m'; 
+$user = 'eozuwfnzmgflmu'; 
+$pass = '2340614a293db8e8a8c02753cd5932cdee45ab90bfcc19d0d306754984cbece1'; 
+$connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
+
+
+
 $query = "INSERT INTO test(name) values ('test')";
-$myPDO->execute($query);
-*/
+$connection->execute($query);
+
 /*
 // Get message from Line API 
 $content = file_get_contents('php://input');
