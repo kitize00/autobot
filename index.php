@@ -117,7 +117,7 @@ break;
 } 
 } 
 } 
-echo "OK Slip2";
+echo "OK Slip3";
 ?>
 
 
@@ -126,5 +126,19 @@ echo "OK Slip2";
 <img src="public/img/5905b55d316c98ef24463edad0a1fbb4.jpg" alt="Mountain View" width="500" height="377">
 -->
 
+  
+  <? php 
+  
+  $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=');
+  
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9b9944d9c68676a215b2efa60ae862c9']);
+$response = $bot->getMessageContent('9b9944d9c68676a215b2efa60ae862c9');
+if ($response->isSucceeded()) {
+    $tempfile = tmpfile();
+    fwrite($tempfile, $response->getRawBody());
+} else {
+    error_log($response->getHTTPStatus() . ' ' . $response->getRawBody());
+}
+  ?>
 </body>
 </html>
