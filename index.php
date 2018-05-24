@@ -110,4 +110,13 @@ break;
 } 
 } 
 } 
-echo "OK Slip1";
+echo "OK Slip2";
+
+<html>
+<body>
+
+<h2>HTML Image</h2>
+<img src="5905b55d316c98ef24463edad0a1fbb4.jpg" alt="Mountain View" width="500" height="377">
+
+</body>
+</html>
