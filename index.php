@@ -19,10 +19,19 @@ $dbname = 'ddad3lvtccl8i9';
 $user = 'jknxgucpqtqspw';
 $pass = 'e4612e631a195ea8e460ecabb629fcf13027aec5fcfc29c7b32ffa377bb913f5'; 
 
-$myPDO = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $database), $username, $password);
+$myPDO = new PDO(sprintf('pgsql:host=%s;dbname=%s', $host, $dbname), $user, $pass);
 $query = "INSERT INTO test(name) values ('test')";
 $myPDO->execute($query);
 
+// Get message from Line API 
+$content = file_get_contents('php://input');
+ $events = json_decode($content, true); 
+
+// Bot response 
+$respMessage = 'Your data has saved.'; 
+$replyToken = $event['replyToken']; 
+$textMessageBuilder = new TextMessageBuilder($respMessage); 
+$response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 
 
