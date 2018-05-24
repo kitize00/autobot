@@ -23,7 +23,7 @@ $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass);
 
 
 
-$count = $connection->exec("INSERT INTO slips(name,user_id,slip_name,slip_date,image) values ('test',1,'test','2018-05-21','test')"); 
+$count = $connection->exec("INSERT INTO slips(name,user_id,slip_name,slip_date) values ('test',1,'test','2018-05-21')"); 
 //$connection->execute($query);
 
 /*
@@ -39,4 +39,4 @@ $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 */
 
 
-echo "OK Slips2";
+echo "OK Slips1";
