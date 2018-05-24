@@ -63,7 +63,7 @@ $effect = $statement->execute($params);
 } 
 
 // Bot response 
-$respMessage = 'Your data has saved.'.$event['message']['id']; 
+$respMessage = 'Your data has saved Text.'.$event['message']['id']; 
   
 $replyToken = $event['replyToken']; 
 $textMessageBuilder = new TextMessageBuilder($respMessage); 
@@ -107,7 +107,7 @@ $statement->execute($params);
 } 
 
 // Bot response 
-$respMessage = 'Your data has saved.'; 
+$respMessage = 'Your data has saved Images.'.$event['message']['id']; 
 $replyToken = $event['replyToken']; 
 $textMessageBuilder = new TextMessageBuilder($respMessage); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder); 
@@ -117,7 +117,7 @@ break;
 } 
 } 
 } 
-echo "OK Slip3";
+echo "OK Slip4";
 ?>
 
 
