@@ -129,6 +129,19 @@ echo "OK Slip1";
   
 <?php 
   
+  httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=');
+  
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9b9944d9c68676a215b2efa60ae862c9']);
+$response = $bot->getProfile('U6a900c42ef3d3dad5c3fbdb763d69552');
+if ($response->isSucceeded()) {
+    $profile = $response->getJSONDecodedBody();
+    echo $profile['displayName'];
+    echo $profile['pictureUrl'];
+    echo $profile['statusMessage'];
+}
+  
+  
+ /* 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=');
   
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9b9944d9c68676a215b2efa60ae862c9']);
@@ -140,7 +153,7 @@ if ($response->isSucceeded()) {
     error_log($response->getHTTPStatus() . ' ' . $response->getRawBody());
 }
 
-  GET https://api.line.me/v2/bot/message/8011086635888/content
+  */
 
 
   
