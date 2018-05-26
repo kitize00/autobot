@@ -128,13 +128,13 @@ echo "OK Slip2";
 
   
 <?php 
-  
+ /* 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=');
   
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9b9944d9c68676a215b2efa60ae862c9']);
-//$response = $bot->getProfile('U3f74bda0541d40bdfb461ba224c0ba11');
+//$response = $bot->getProfile('U3f74bda0541d40bdfb461ba224c0ba11');//ออม
   
- // $response = $bot->getProfile('Ua2010f21cf2e3ba7f3b45e88a4f8b602');//พี่เอส
+//$response = $bot->getProfile('Ua2010f21cf2e3ba7f3b45e88a4f8b602');//พี่เอส
   
   $response = $bot->getProfile('U6a900c42ef3d3dad5c3fbdb763d69552');
   
@@ -145,7 +145,7 @@ if ($response->isSucceeded()) {
     echo $profile['statusMessage']."<br>";
 }
   
-
+*/
   
  /* 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=');
