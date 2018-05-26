@@ -162,7 +162,7 @@ if ($response->isSucceeded()) {
   */
 
 
-  
+  <img src="https://kitize-bot.herokuapp.com/620f84dd8c75f340243fbd5cd34bfe5d.jpg" alt="Smiley face" height="42" width="42">
  
   ?>
 </body>
