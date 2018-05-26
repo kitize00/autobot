@@ -51,7 +51,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9b9944d9c68676a215b2e
 $response = $bot->getMessageContent('8019724954285');
 if ($response->isSucceeded()) {
     $tempfile = tmpfile();
-    fwrite($tempfile, $response->getRawBody());
+    echo fwrite($tempfile, $response->getRawBody());
 } else {
     error_log($response->getHTTPStatus() . ' ' . $response->getRawBody());
 }
