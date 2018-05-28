@@ -29,7 +29,7 @@ $messageID = $event['message']['id'];
 $fileName = $event['message']['fileName']; 
 
 // Reply message 
-$respMessage = 'Hello, your file ID is '. $messageID . ' and file name is '. $fileName; 
+$respMessage = 'Hello, your message ID is '. $messageID . ' and file name is '. $fileName; 
 break; 
 default: 
 
@@ -55,5 +55,5 @@ if ($response->isSucceeded()) {
 } else {
     error_log($response->getHTTPStatus() . ' ' . $response->getRawBody());
 }*/
-echo "OK FileGroup1";
+echo "OK FileGroup2";
 ?>
