@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
 <?php 
 require_once('./vendor/autoload.php'); 
 
@@ -51,9 +57,12 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '9b9944d9c68676a215b2e
 $response = $bot->getMessageContent('8029466569338');
 if ($response->isSucceeded()) {
     $tempfile = tmpfile();
-    echo  $tempfile;
+    echo  $tempfile."<br>";
 } else {
     error_log($response->getHTTPStatus() . ' ' . $response->getRawBody());
 }
-echo "OK FileGroup1";
+echo "OK FileGroup2";
 ?>
+    
+</body>
+</html>
