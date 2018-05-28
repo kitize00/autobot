@@ -61,8 +61,8 @@ if ($response->isSucceeded()) {
 } else {
     error_log($response->getHTTPStatus() . ' ' . $response->getRawBody());
 }
-echo "OK FileGroup2";
+echo "OK FileGroup1";
 ?>
-    
+   <a href="https://api.line.me/v2/bot/message/8029466569338/content">link text</a> 
 </body>
 </html>
