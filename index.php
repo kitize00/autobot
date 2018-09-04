@@ -11,7 +11,7 @@ $channel_token = 'AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBe
 $channel_secret = '9b9944d9c68676a215b2efa60ae862c9'; 
  
 // Get message from Line API
-$content = file_get_contents('php:// input') ;
+$content = file_get_contents('php://input') ;
 $events = json_decode($content, true); 
 
 if (!is_null( $events['events'])) { 
