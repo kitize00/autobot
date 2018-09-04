@@ -23,13 +23,14 @@ if (!is_null( $events['events'])) {
     foreach ($events['events'] as $event) { 
 
         // Line API send a lot of event type, we interested in message only. 
-        if ($event['type'] == 'file') {
+        if ($event['type'] == 'message') {
  
             // Get replyToken
-            $replyToken = $event['replyToken']; 
+           //
 
             switch($event['message']['type']) { 
                 case 'file': 
+                    $replyToken = $event['replyToken']; 
                     $messageID = $event['message'][ 'id'];
                     $fileName = $event['message']['fileName']; 
 
