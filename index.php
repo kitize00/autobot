@@ -29,14 +29,14 @@ if (!is_null( $events['events'])) {
            //
 
             switch($event['message']['type']) { 
-                case 'file': 
+                case 'text': 
                     $replyToken = $event['replyToken']; 
                     $messageID = $event['message'][ 'id'];
                     $fileName = $event['message']['fileName']; 
 
                     // Reply message 
-                    $respMessage = 'Hello, your file ID is '. $messageID . ' and file name is '.
-$fileName;
+                    //$respMessage = 'Hello, your file ID is '. $messageID . ' and file name is '.$fileName;
+              $respMessage = 'Hello, your message is '. $event['message']['text']; 
                     break; 
                 default: 
                     // Reply message 
