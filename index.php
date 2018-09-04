@@ -7,10 +7,8 @@ use \LINE\LINEBot;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
  
 // Token
-$channel_token = 
-'1v2OUa9tuMIiDhEg57ANbsRaBDbBGP9nlCC+Dpvt5HrsQ+LqcrImWPUBkH8re/pwqxv56d15kZeMoU/vQ0zuzPFlbhFM7AhRMZwLr
-SkLdcjbFurwXGOyHLt8MdgzLfAe7r0BsQV5cATlUanW3OgJewdB04t89/1O/ w1cDnyilFU='; 
-$channel_secret = '9b2c7349ea939ef723a3cb453d774c86';
+$channel_token = 'AaC6MGkTB53CyXHhSFQtJ0jB/7N3Us/ZIlUtYpDuaLY59fhT8NRXI13cV3TuBewRIz6To7lN29uWOYAELcimK1ihnHKnN7wZE0F0infoxvns9AAaKMULnrWd9U//hUALyqAIsBTVDt9EVWo0/ly93AdB04t89/1O/w1cDnyilFU=';
+$channel_secret = '9b9944d9c68676a215b2efa60ae862c9'; 
  
 // Get message from Line API
 $content = file_get_contents('php:// input') ;
