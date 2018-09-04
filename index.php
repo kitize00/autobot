@@ -30,10 +30,7 @@ $respMessage = 'Hello, your message is '. $event['message']['text'];
 
 break; 
               
-                default: 
-                    // Reply message 
-                    $respMessage = 'Please send file only';
-                    break; 
+               
             }
  
      $httpClient = new CurlHTTPClient($channel_token); 
