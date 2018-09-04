@@ -31,8 +31,8 @@ if (!is_null( $events['events'])) {
             switch($event['message']['type']) { 
                 case 'text': 
                     $replyToken = $event['replyToken']; 
-                    $messageID = $event['message'][ 'id'];
-                    $fileName = $event['message']['fileName']; 
+                   // $messageID = $event['message'][ 'id'];
+                   // $fileName = $event['message']['fileName']; 
 
                     // Reply message 
                     //$respMessage = 'Hello, your file ID is '. $messageID . ' and file name is '.$fileName;
@@ -40,7 +40,7 @@ if (!is_null( $events['events'])) {
                     break; 
                 default: 
                     // Reply message 
-                    $respMessage = 'Please send file only';
+                   // $respMessage = 'Please send file only';
                     break; 
             }
  
