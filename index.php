@@ -28,13 +28,14 @@ $replyToken = $event['replyToken'];
 // Reply message 
 $respMessage = 'Hello, your message is '. $event['message']['text']; 
 
-break; 
+
               
               $httpClient = new CurlHTTPClient($channel_token); 
      $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
          
   $textMessageBuilder = new TextMessageBuilder($respMessage); 
 $response = $bot->replyMessage($replyToken, $textMessageBuilder);  
+  break; 
             }
  
      
