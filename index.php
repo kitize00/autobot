@@ -4,7 +4,7 @@
 <title>Page Title</title>
 </head>
 <body>
-<?php 
+
 <?php
 require_once('./vendor/autoload.php'); 
 
