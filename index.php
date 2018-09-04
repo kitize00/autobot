@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 // Line API send a lot of event type, we interested in message only. 
 if ($event['type'] == 'message') { 
 switch($event['message']['type']) { 
-case 'file':  
+case 'text': 
 // Get replyToken 
 $replyToken = $event['replyToken']; 
 // Reply message 
