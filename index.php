@@ -14,7 +14,7 @@ $channel_secret = '9b9944d9c68676a215b2efa60ae862c9';
 $content = file_get_contents('php://input') ;
 $events = json_decode($content, true); 
 
-if (!is_null( $events['events'])) { 
+if (!is_null($events['events'])) { 
 
     // Loop through each event
     foreach ($events['events'] as $event) { 
