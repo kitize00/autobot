@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+
 
 <?php
 require_once('./vendor/autoload.php'); 
@@ -60,5 +55,4 @@ $fileName;
  
 echo "OK FileGroup1";
 ?>
-</body>
-</html>
+
