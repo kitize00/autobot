@@ -29,7 +29,7 @@ if (!is_null( $events['events'])) {
             $replyToken = $event['replyToken']; 
 
             switch($event['message']['type']) { 
-                case 'file': 
+                case 'message': 
                     $messageID = $event['message'][ 'id'];
                     $fileName = $event['message']['fileName']; 
 
